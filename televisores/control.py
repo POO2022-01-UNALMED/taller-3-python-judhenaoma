@@ -1,19 +1,16 @@
 
 
-import this
-
-
 class Control:
 
 
     def __init__(self):
 
-        self._tv=""
+        self._tv = ""
     
 
     def enlazar(self, televisor):
         self._tv = televisor
-        televisor.control = self
+        televisor._control = self
     
     def getTv(self):
         return self._tv
@@ -54,7 +51,7 @@ class Control:
                 self._tv._volumen -= 1
     
     def setCanal(self, canal):
-        if self._tv._estado == True:
+        if self._tv._estado == True and canal<= 120 and canal >= 1:
             self._tv._canal = canal
 
 
