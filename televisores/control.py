@@ -13,7 +13,7 @@ class Control:
 
     def enlazar(self, televisor):
         self._tv = televisor
-        televisor.control = this
+        televisor.control = self
     
     def getTv(self):
         return self._tv
@@ -29,7 +29,7 @@ class Control:
     
     def turnOff(self):
         self._tv._estado = False
-        
+
     def getEstado(self):
         return self._tv._estado
     
@@ -54,6 +54,7 @@ class Control:
                 self._tv._volumen -= 1
     
     def setCanal(self, canal):
-        self._tv._canal = canal
+        if self._tv._estado == True:
+            self._tv._canal = canal
 
 
